@@ -1,3 +1,7 @@
 [user]
 	name = Wei Jian Gan
 	email = weijiangan@outlook.com
+[credential]
+	helper = cache --timeout=3600
+[core]
+	excludesfile = .gitignore_global
