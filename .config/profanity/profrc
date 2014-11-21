@@ -1,0 +1,6 @@
+[ui]
+beep=true
+history=true
+
+[logging]
+chlog=true

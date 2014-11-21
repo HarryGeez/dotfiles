@@ -1,0 +1,41 @@
+xterm*faceName: Inconsolata:size=10:antialias=true
+!xterm*faceName: DejaVu Sans Mono:size=8
+xterm*faceNameDoublesize: Source Han Sans:size=4:antialias true
+xterm*metaSendsEscape: true
+
+! special
+*.foreground:   #00ff00
+*.background:   #000000
+*.cursorColor:  #00ff00
+
+! black
+*.color0:       #000000
+*.color8:       #535353
+
+! red
+*.color1:       #850002
+*.color9:       #dc0005
+
+! green
+*.color2:       #149902
+*.color10:      #1cd604
+
+! yellow
+*.color3:       #878904
+*.color11:      #dfe309
+
+! blue
+*.color4:       #0000a2
+*.color12:      #0000fe
+
+! magenta
+*.color5:       #996633
+*.color13:      #db00df
+
+! cyan
+*.color6:       #1396a3
+*.color14:      #1ce1df
+
+! white
+*.color7:       #b1b1b1
+*.color15:      #dfdfdf
