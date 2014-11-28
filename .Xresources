@@ -1,7 +1,14 @@
 xterm*faceName: Inconsolata:size=10:antialias=true
 !xterm*faceName: DejaVu Sans Mono:size=8
-xterm*faceNameDoublesize: Source Han Sans:size=4:antialias true
+xterm*faceNameDoublesize: Source Han Sans:size=8:antialias true
 xterm*metaSendsEscape: true
+xterm*bellIsUrgent: true
+XTerm*vt100.translations: #override \
+	<Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
+	Shift <KeyPress> Up:      scroll-back(1, line) \n\
+	Shift <KeyPress> Down:    scroll-forw(1, line) \n\
+	Ctrl Shift <KeyPress> C:  select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
+	Ctrl Shift <KeyPress> V:  insert-selection(CLIPBOARD, CUT_BUFFER0, PRIMARY) \n
 
 ! special
 *.foreground:   #00ff00
