@@ -3,12 +3,18 @@ xterm*faceName: Inconsolata:size=10:antialias=true
 xterm*faceNameDoublesize: Source Han Sans:size=8:antialias true
 xterm*metaSendsEscape: true
 xterm*bellIsUrgent: true
-XTerm*vt100.translations: #override \
+xterm*vt100.translations: #override \
 	<Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
 	Shift <KeyPress> Up:      scroll-back(1, line) \n\
 	Shift <KeyPress> Down:    scroll-forw(1, line) \n\
 	Ctrl Shift <KeyPress> C:  select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
 	Ctrl Shift <KeyPress> V:  insert-selection(CLIPBOARD, CUT_BUFFER0, PRIMARY) \n
+URxvt.font: xft:Inconsolata:size=10
+URxvt.scrollBar: false
+URxvt.letterSpace: -1
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
 
 ! special
 *.foreground:   #00ff00
