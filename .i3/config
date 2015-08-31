@@ -16,10 +16,8 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1 8
-#font pango:Source Han Sans 8
-font pango:Lucida Grande 8
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -155,7 +153,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         position top
-        font pango: Free Sans 8
+        font pango: Inconsolata 10
         colors {
             separator #000000
             focused_workspace #000000 #000000 #ffffff
@@ -169,8 +167,8 @@ bindsym XF86AudioLowerVolume exec amixer -q set Speaker 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Speaker toggle
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -183,3 +181,5 @@ client.focused          #285577 #285577 #ffffff #2e9ef4
 client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused        #222222 #222222 #888888 #292d2e
 client.urgent           #2f343a #900000 #ffffff #900000
+
+font pango:Inconsolata 10
