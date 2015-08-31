@@ -6,4 +6,28 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+
+# OS X-like bash prompt
+PS1='\h:\W \u\$ '
+
+# Enables extglob. shopt -u extglob to turn off.
+shopt -s extglob
+
+# Taylor's University's UNIX server details
+icampusip="10.99.75.213"
+ocampusip="180.200.233.21"
+campusport="12322"
+alias icampus="ssh 0324266@10.99.75.213 -p 12322" 
+alias ocampus="ssh 0324266@180.200.233.21 -p 12322"
+
+# Cleanup emacs junk
+alias cleanup="rm *(*~|a.out)"
+
+# Don't remember entered commands until exit
+alias youreold="unset HISTFILE"
+
+# Displays the tree of the current directory
+if [ ! -x "$(which tree 2>/dev/null)" ]
+then alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+fi
+
