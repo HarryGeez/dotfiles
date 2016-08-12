@@ -9,12 +9,10 @@ xterm*vt100.translations: #override \
 	Shift <KeyPress> Down:    scroll-forw(1, line) \n\
 	Ctrl Shift <KeyPress> C:  select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
 	Ctrl Shift <KeyPress> V:  insert-selection(CLIPBOARD, CUT_BUFFER0, PRIMARY) \n
-URxvt.font: xft:Inconsolata:size=10
+URxvt.font: xft:Dejavu Sans Mono:size=10
 URxvt.scrollBar: false
 URxvt.letterSpace: -1
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/firefox
-URxvt.matcher.button: 1
+URxvt*iso14755: false
 
 ! special
 *.foreground:   #b7b8b9
