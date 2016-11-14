@@ -33,41 +33,23 @@
    'delight
    'emmet-mode
    'expand-region
+   'flycheck
+   'general-close
    'golden-ratio
    'helm
    'iedit
    'irony
    'js2-mode
    'persp-mode
+   'rainbow-delimiters
+   'smartparens
    'spaceline
+   'tern
    'web-mode
    'which-key
    'window-numbering
    'yasnippet
    ))
-
-(if (display-graphic-p)
-    (progn
-	  (load-theme 'base16-ocean t)
-	  ;; (defun invisible-fringes ()
-	  ;; 	(set-face-attribute 'fringe nil
-	  ;; 						:foreground (face-foreground 'default)
-	  ;; 						:background (face-background 'default)))
-	  ;; (invisible-fringes)
-	  (set-frame-font "Menlo 13")
-	  ;; This is bound to f11 in Emacs 24.4
-	  (toggle-frame-fullscreen)
-	  ;; Who use the bar to scroll?
-	  (scroll-bar-mode 0)
-	  ;; No toolbar
-	  (tool-bar-mode 0)
-	  ;; ;; No menubar
-	  ;; (menu-bar-mode 0)
-	  ;; No fringes
-	  (fringe-mode 0))
-  ;; else
-  ;; No menubar
-  (menu-bar-mode 0))
 
 ;; Disable startup message
 (setq inhibit-startup-message t)
@@ -372,15 +354,6 @@
 
 
 ;;
-;;  spaceline
-;;
-
-(setq powerline-default-separator 'utf-8) ; fix off-colors, must be in this order!
-(require 'spaceline-config)
-(spaceline-spacemacs-theme)
-
-
-;;
 ;;  helm
 ;;
 
@@ -452,19 +425,43 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 
-;;
-;;  delight
-;;
-
-(require 'delight)
-(delight '((company-mode "Ⓐ" company)
-           (smartparens-mode "ⓟ" smartparens)
-		   (yas-minor-mode "ⓨ" yasnippet)
-		   (golden-ratio-mode "ⓖ" golden-ratio)
-           (visual-line-mode "Ⓦ" simple)
-           (abbrev-mode "ⓐ" abbrev)
-           (helm-mode "Ⓗ" helm)
-		   (irony-mode "Ⓘ" irony)
-		   (which-key-mode nil which-key)
-		   (flycheck-mode nil flycheck)
-           ))
+(if (display-graphic-p)
+    (progn
+	  (load-theme 'base16-ocean t)
+	  ;; (defun invisible-fringes ()
+	  ;; 	(set-face-attribute 'fringe nil
+	  ;; 						:foreground (face-foreground 'default)
+	  ;; 						:background (face-background 'default)))
+	  ;; (invisible-fringes)
+	  (set-frame-font "SF Mono 13")
+	  ;; This is bound to f11 in Emacs 24.4
+	  (toggle-frame-fullscreen)
+	  ;; Who use the bar to scroll?
+	  (scroll-bar-mode 0)
+	  ;; No toolbar
+	  (tool-bar-mode 0)
+	  ;; ;; No menubar
+	  ;; (menu-bar-mode 0)
+	  ;; No fringes
+	  (fringe-mode 0)
+	  ;;  spaceline
+	  (setq powerline-default-separator 'utf-8) ; fix off-colors, must be in this order!
+	  (require 'spaceline-config)
+	  (spaceline-spacemacs-theme)
+	  ;;  delight
+	  (require 'delight)
+	  (delight '((company-mode "Ⓐ" company)
+				 (smartparens-mode "ⓟ" smartparens)
+				 (yas-minor-mode "ⓨ" yasnippet)
+				 (golden-ratio-mode "ⓖ" golden-ratio)
+				 (visual-line-mode "Ⓦ" simple)
+				 (abbrev-mode "ⓐ" abbrev)
+				 (helm-mode "Ⓗ" helm)
+				 (irony-mode "Ⓘ" irony)
+				 (which-key-mode nil which-key)
+				 (flycheck-mode nil flycheck)
+				 ))
+	  )
+  ;; else
+  ;; No menubar
+  (menu-bar-mode 0))
