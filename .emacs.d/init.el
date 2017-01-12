@@ -34,7 +34,6 @@
    'emmet-mode
    'expand-region
    'flycheck
-   'general-close
    'golden-ratio
    'helm
    'iedit
@@ -433,7 +432,7 @@
 	  ;; 						:foreground (face-foreground 'default)
 	  ;; 						:background (face-background 'default)))
 	  ;; (invisible-fringes)
-	  (set-frame-font "SF Mono 13")
+	  (set-frame-font "Dejavu Sans Mono 10")
 	  ;; This is bound to f11 in Emacs 24.4
 	  (toggle-frame-fullscreen)
 	  ;; Who use the bar to scroll?
