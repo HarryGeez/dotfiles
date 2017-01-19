@@ -9,7 +9,7 @@ xterm*vt100.translations: #override \
 	Shift <KeyPress> Down:    scroll-forw(1, line) \n\
 	Ctrl Shift <KeyPress> C:  select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
 	Ctrl Shift <KeyPress> V:  insert-selection(CLIPBOARD, CUT_BUFFER0, PRIMARY) \n
-URxvt.font: xft:Dejavu Sans Mono:size=10
+URxvt.font: xft:Inconsolata:size=10
 URxvt.scrollBar: false
 URxvt.letterSpace: -1
 URxvt*iso14755: false
