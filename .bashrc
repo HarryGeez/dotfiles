@@ -31,3 +31,5 @@ if [ ! -x "$(which tree 2>/dev/null)" ]
 then alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 fi
 
+alias ci='sudo systemctl start dhcpcd@enp0s3.service'
+alias portal='sudo mount -t vboxsf -o gid=1000,uid=1000 C_DRIVE /home/weijiangan/portal/'

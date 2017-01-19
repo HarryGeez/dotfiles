@@ -434,17 +434,17 @@
 	  ;; (invisible-fringes)
 	  (set-frame-font "Dejavu Sans Mono 10")
 	  ;; This is bound to f11 in Emacs 24.4
-	  (toggle-frame-fullscreen)
+	  ;; (toggle-frame-fullscreen)
 	  ;; Who use the bar to scroll?
 	  (scroll-bar-mode 0)
 	  ;; No toolbar
 	  (tool-bar-mode 0)
 	  ;; ;; No menubar
-	  ;; (menu-bar-mode 0)
+	  (menu-bar-mode 0)
 	  ;; No fringes
 	  (fringe-mode 0)
 	  ;;  spaceline
-	  (setq powerline-default-separator 'utf-8) ; fix off-colors, must be in this order!
+	  (setq powerline-default-separator 'wave) ; fix off-colors, must be in this order!
 	  (require 'spaceline-config)
 	  (spaceline-spacemacs-theme)
 	  ;;  delight
