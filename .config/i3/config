@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -148,7 +148,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
 exec --no-startup-id feh --bg-scale ~/.local/share/backgrounds/uoi3lg8fgl4-sam-ferrara.jpg
+
 font pango:Dejavu Sans Mono 10
 
 # Start i3bar to display a workspace bar (plus the system information i3status

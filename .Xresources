@@ -1,5 +1,4 @@
 xterm*faceName: Dejavu Sans Mono:size=10:antialias=true
-!xterm*faceName: DejaVu Sans Mono:size=11
 xterm*faceNameDoublesize: Source Han Sans:size=8:antialias true
 xterm*metaSendsEscape: true
 xterm*bellIsUrgent: true
