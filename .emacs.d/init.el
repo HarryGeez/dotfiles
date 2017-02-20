@@ -419,7 +419,7 @@
 				select-window-7
 				select-window-8
 				select-window-9)))
-(golden-ratio-mode 1)
+;; (golden-ratio-mode 1)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
@@ -432,19 +432,19 @@
 	  ;; 						:foreground (face-foreground 'default)
 	  ;; 						:background (face-background 'default)))
 	  ;; (invisible-fringes)
-	  (set-frame-font "Dejavu Sans Mono 10")
-	  ;; This is bound to f11 in Emacs 24.4
-	  (toggle-frame-fullscreen)
+	  (set-frame-font "Inconsolata 10")
+	  ;; ;; This is bound to f11 in Emacs 24.4
+	  ;; (toggle-frame-fullscreen)
 	  ;; Who use the bar to scroll?
 	  (scroll-bar-mode 0)
 	  ;; No toolbar
 	  (tool-bar-mode 0)
-	  ;; ;; No menubar
-	  ;; (menu-bar-mode 0)
+	  ;; No menubar
+	  (menu-bar-mode 0)
 	  ;; No fringes
 	  (fringe-mode 0)
 	  ;;  spaceline
-	  (setq powerline-default-separator 'utf-8) ; fix off-colors, must be in this order!
+	  (setq powerline-default-separator 'wave)
 	  (require 'spaceline-config)
 	  (spaceline-spacemacs-theme)
 	  ;;  delight
