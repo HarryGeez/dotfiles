@@ -419,7 +419,7 @@
 				select-window-7
 				select-window-8
 				select-window-9)))
-(golden-ratio-mode 1)
+; (golden-ratio-mode 1)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
