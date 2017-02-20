@@ -33,3 +33,5 @@ fi
 
 alias ci='sudo systemctl start dhcpcd@enp0s3.service'
 alias portal='sudo mount -t vboxsf -o gid=1000,uid=1000 C_DRIVE /home/weijiangan/portal/'
+alias msdf='sudo mount -t vboxsf -o gid=1000,uid=1000 mysqldump /var/data/backups/mysqldump'
+source /var/data/MyConfigura/docker/alias.sh
