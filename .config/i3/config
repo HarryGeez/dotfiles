@@ -148,9 +148,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
-exec --no-startup-id feh --bg-scale ~/.local/share/backgrounds/uoi3lg8fgl4-sam-ferrara.jpg
-
 font pango:Dejavu Sans Mono 10
 
 # Start i3bar to display a workspace bar (plus the system information i3status
