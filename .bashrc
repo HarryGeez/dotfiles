@@ -31,3 +31,9 @@ if [ ! -x "$(which tree 2>/dev/null)" ]
 then alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 fi
 
+if [ -t 1 ]
+then
+# search for commands that start off with the same characters already typed
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+fi
