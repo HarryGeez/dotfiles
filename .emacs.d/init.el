@@ -44,7 +44,9 @@
    'iedit
    'irony
    'js2-mode
+   'multiple-cursors
    'persp-mode
+   'phi-search
    'rainbow-delimiters
    'smartparens
    'spaceline
