@@ -155,7 +155,7 @@ font pango:Dejavu Sans Mono 10
 bar {
         status_command i3status
         position top
-        font pango:Dejavu Sans Mono 10
+        font pango:Dejavu Sans Mono, FontAwesome 10
         colors {
             separator #000000
             focused_workspace #000000 #000000 #ffffff
