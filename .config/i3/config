@@ -179,15 +179,15 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # class                 border  backgr. text    indicator
-client.focused          #a3be8c #a3be8c #515f46 #7b8f69
-client.focused_inactive #333333 #5f676a #c0c5ce #484e50
-client.unfocused        #65737e #65737e #b2b9bf #292d2e
+client.focused          #636b7c #636b7c #515f46 #7b8f69
+client.focused_inactive #2B303B #2B303B #c0c5ce #484e50
+client.unfocused        #2B303B #2B303B #b2b9bf #292d2e
 client.urgent           #2f343a #900000 #c0c5ce #900000
 
 focus_follows_mouse no
 
 # gaps
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 6
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
