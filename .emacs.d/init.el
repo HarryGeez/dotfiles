@@ -1,9 +1,18 @@
+;;; init.el --- Wei Jian's Emacs Config
+
+;; Mantainer: Wei Jian Gan
+
+;;; Commentary:
+
+;; Basically Emacs the way I like it :)
+
+;;; Code:
+
 (setq-default buffer-file-coding-system 'utf-8-unix)
 (setq-default default-buffer-file-coding-system 'utf-8-unix)
 (set-default-coding-systems 'utf-8-unix)
 (prefer-coding-system 'utf-8-unix)
 
-;; (add-to-list 'load-path "~/.emacs.d/lisp")
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 (when (> emacs-major-version 23)
   (require 'package)
@@ -57,6 +66,68 @@
    'yasnippet
    ))
 
+
+;;
+;;  window-numbering-mode
+;;
+
+(defun window-numbering-install-mode-line (&optional position)
+  "Do nothing.")
+(window-numbering-mode)
+
+
+(defun spacemacs/compute-powerline-height ()
+  "Return an adjusted powerline height."
+  (let ((scale (if (and (boundp 'powerline-scale) powerline-scale)
+                   powerline-scale 1)))
+    (truncate (* scale (frame-char-height)))))
+
+
+(if (display-graphic-p)
+    (progn
+	  (load-theme 'base16-ocean t)
+	  ;; (defun invisible-fringes ()
+	  ;; 	(set-face-attribute 'fringe nil
+	  ;; 						:foreground (face-foreground 'default)
+	  ;; 						:background (face-background 'default)))
+	  ;; (invisible-fringes)
+	  (set-frame-font "Dejavu Sans Mono 10")
+	  ;; This is bound to f11 in Emacs 24.4
+	  ;; (toggle-frame-fullscreen)
+	  ;; Who use the bar to scroll?
+	  (scroll-bar-mode 0)
+	  ;; No toolbar
+	  (tool-bar-mode 0)
+	  ;; No menubar
+	  (menu-bar-mode 0)
+	  ;; No fringes
+	  (fringe-mode 0)
+	  ;;  spaceline
+	  (require 'spaceline-config)
+	  (setq-default powerline-default-separator 'wave) ; fix off-colors, must be in this order!
+	  (setq-default powerline-scale 1.3)
+	  (setq-default powerline-height (spacemacs/compute-powerline-height))
+	  (spaceline-spacemacs-theme)
+
+	  ;;  delight
+	  (require 'delight)
+	  (delight '((company-mode "Ⓐ" company)
+	  			 (smartparens-mode "ⓟ" smartparens)
+	  			 (yas-minor-mode "ⓨ" yasnippet)
+	  			 (golden-ratio-mode "ⓖ" golden-ratio)
+	  			 (visual-line-mode "Ⓦ" simple)
+	  			 (abbrev-mode "ⓐ" abbrev)
+	  			 (helm-mode "Ⓗ" helm)
+	  			 (irony-mode "Ⓘ" irony)
+	  			 (which-key-mode nil which-key)
+	  			 (flycheck-mode nil flycheck)
+	  			 ))
+	  )
+  ;; else
+  ;; No menubar
+  (menu-bar-mode 0))
+
+
 ;; Disable startup message
 (setq inhibit-startup-message t)
 
@@ -84,7 +155,7 @@
  )
 
 ;; Compile witout prompt. Add C-u before M-x compile to compile normally
-(setq compilation-read-command nil)
+(setq-default compilation-read-command nil)
 ;; Press C-u C-x C-m to compile normally
 (global-set-key "\C-x\C-m" 'compile)
 
@@ -130,7 +201,7 @@
 ;;
 
 ;; Set C-Mode to use Linux indentation style.
-(setq c-default-style "linux")
+(setq-default c-default-style "linux")
 ;; More indentation settings; Set tab-width to 4.
 (setq-default c-basic-offset 4
 			  tab-width 4
@@ -173,19 +244,6 @@
 		  (lambda ()
 			(when (not (equal buffer-file-name nil))
 			  (set (make-local-variable 'compile-command) "g++ *.cc"))))
-
-
-;; ;;
-;; ;;  semantic
-;; ;;
-
-;; (require 'semantic)
-;; (global-semanticdb-minor-mode 1)
-;; (global-semantic-idle-scheduler-mode 1)
-;; (semantic-mode 1)
-;; (semantic-add-system-include "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1" 'c++-mode)
-;; (semantic-add-system-include "~/linux/kernel")
-;; (semantic-add-system-include "~/linux/include")
 
 
 ;;
@@ -349,18 +407,9 @@
 ;;
 
 (with-eval-after-load "persp-mode-autoloads"
-  (setq wg-morph-on nil) ;; switch off animation
-  (setq persp-autokill-buffer-on-remove 'kill-weak)
+  (setq-default wg-morph-on nil) ;; switch off animation
+  (setq-default persp-autokill-buffer-on-remove 'kill-weak)
   (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
-
-
-;;
-;;  window-numbering-mode
-;;
-
-(defun window-numbering-install-mode-line (&optional position)
-  "Do nothing.")
-(window-numbering-mode)
 
 
 ;;
@@ -373,18 +422,18 @@
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-c h o") 'helm-occur)
-(setq helm-buffers-fuzzy-matching t
-      helm-recentf-fuzzy-match    t)
+(setq-default helm-buffers-fuzzy-matching t
+			  helm-recentf-fuzzy-match    t)
 (helm-mode 1)
 (when (executable-find "curl")
-  (setq helm-google-suggest-use-curl-p t))
+  (setq-default helm-google-suggest-use-curl-p t))
 
-(setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
-      helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
-      helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
-      helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
-      helm-ff-file-name-history-use-recentf t
-      helm-echo-input-in-header-line t)
+(setq-default helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
+			  helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
+			  helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
+			  helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
+			  helm-ff-file-name-history-use-recentf t
+			  helm-echo-input-in-header-line t)
 
 (defun spacemacs//helm-hide-minibuffer-maybe ()
   "Hide minibuffer in Helm session if we use the header line as input field."
@@ -400,8 +449,8 @@
 (add-hook 'helm-minibuffer-set-up-hook
           'spacemacs//helm-hide-minibuffer-maybe)
 
-(setq helm-autoresize-max-height 0)
-(setq helm-autoresize-min-height 20)
+(setq-default helm-autoresize-max-height 0)
+(setq-default helm-autoresize-min-height 20)
 (helm-autoresize-mode 1)
 
 ;;
@@ -451,43 +500,6 @@
 (setq-default cperl-highlight-variables-indiscriminately t)
 
 
-(if (display-graphic-p)
-    (progn
-	  (load-theme 'base16-ocean t)
-	  ;; (defun invisible-fringes ()
-	  ;; 	(set-face-attribute 'fringe nil
-	  ;; 						:foreground (face-foreground 'default)
-	  ;; 						:background (face-background 'default)))
-	  ;; (invisible-fringes)
-	  (set-frame-font "Dejavu Sans Mono 10")
-	  ;; This is bound to f11 in Emacs 24.4
-	  ;; (toggle-frame-fullscreen)
-	  ;; Who use the bar to scroll?
-	  (scroll-bar-mode 0)
-	  ;; No toolbar
-	  (tool-bar-mode 0)
-	  ;; ;; No menubar
-	  (menu-bar-mode 0)
-	  ;; No fringes
-	  (fringe-mode 0)
-	  ;;  spaceline
-	  (setq powerline-default-separator 'wave) ; fix off-colors, must be in this order!
-	  (require 'spaceline-config)
-	  (spaceline-spacemacs-theme)
-	  ;;  delight
-	  (require 'delight)
-	  (delight '((company-mode "A" company)
-				 (smartparens-mode "p" smartparens)
-				 (yas-minor-mode "y" yasnippet)
-				 (golden-ratio-mode "g" golden-ratio)
-				 (visual-line-mode "W" simple)
-				 (abbrev-mode "a" abbrev)
-				 (helm-mode "H" helm)
-				 (irony-mode "I" irony)
-				 (which-key-mode nil which-key)
-				 (flycheck-mode nil flycheck)
-				 ))
-	  )
-  ;; else
-  ;; No menubar
-  (menu-bar-mode 0))
+(provide 'init)
+
+;;; init.el ends here
