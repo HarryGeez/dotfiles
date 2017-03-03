@@ -155,7 +155,7 @@ font pango:Inconsolata 10
 bar {
         status_command i3status
         position top
-        font pango: Inconsolata 10
+        font pango: Inconsolata, FontAwesome 10
         colors {
             separator #000000
             focused_workspace #000000 #000000 #ffffff
