@@ -69,7 +69,6 @@ separator_block_width = 15
 tztime local {
 format = "%-e %b,%a | %-l:%M"
 }
-}
 
 load {
 format = " %1min"
