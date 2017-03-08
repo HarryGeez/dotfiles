@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 PS1='%m:%~ %n\$ '
-PROMPT='%(?.%F{magenta}.%F{red})$%f '
+# PROMPT='%(?.%F{magenta}.%F{red})$%f '
 SAVEHIST=4000
 HISTSIZE=2000
 HISTFILE="$HOME/.zsh_history"
@@ -34,3 +34,9 @@ alias youreold="unset HISTFILE"
 function tree {
     find ${1:-.} -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
 }
+
+alias ls='ls --color=auto'
+
+autoload -U promptinit; promptinit
+prompt pure
+source /Users/weijiangan/Git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
