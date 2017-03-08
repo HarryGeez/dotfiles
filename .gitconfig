@@ -12,3 +12,4 @@
 	lg = !"git lg1"
 [push]
 	default = simple
+

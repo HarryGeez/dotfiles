@@ -12,8 +12,9 @@ xterm*vt100.translations: #override \
 URxvt.font: xft:Inconsolata:size=10
 URxvt.scrollBar: false
 URxvt.letterSpace: -1
+URxvt.perl-ext-common: selection-to-clipboard
 URxvt*iso14755: false
-URxvt.internalBorder: 10
+URxvt.internalBorder: 15
 
 ! special
 *.foreground:   #c0c5ce
