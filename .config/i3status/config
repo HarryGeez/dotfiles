@@ -12,6 +12,7 @@ general {
 		color_bad = "#8A8A8A"
 }
 
+order += "tztime sweden"
 order += "cpu_usage"
 order += "load"
 order += "disk /"
@@ -20,6 +21,12 @@ order += "wireless _first_"
 order += "volume master"
 order += "battery 0"
 order += "tztime local"
+
+tztime sweden {
+format = "It is %-l:%M in Linköping"
+timezone = "Europe/Stockholm"
+separator_block_width = 415
+}
 
 wireless _first_ {
 format_up = " %essid(%quality)"
