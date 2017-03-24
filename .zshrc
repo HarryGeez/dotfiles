@@ -31,12 +31,13 @@ alias cleanup="rm *(*~|a.out)"
 # Don't remember entered commands until exit
 alias youreold="unset HISTFILE"
 
-function tree {
-    find ${1:-.} -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
-}
-
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias grepmc='grep --color=auto -nrI --exclude-dir="css" --exclude-dir=".sass-cache" --exclude="TAGS"'
+
+alias msdf='sudo mount -t vboxsf -o gid=1000,uid=1000 mysqldump /var/data/backups/mysqldump'
+source /var/data/MyConfigura/docker/alias.sh
 
 autoload -U promptinit; promptinit
 prompt pure
-source /Users/weijiangan/Git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/Git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
