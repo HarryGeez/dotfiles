@@ -31,9 +31,9 @@ alias cleanup="rm *(*~|a.out)"
 # Don't remember entered commands until exit
 alias youreold="unset HISTFILE"
 
-function tree {
-    find ${1:-.} -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
-}
+# function tree {
+#     find ${1:-.} -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+# }
 
 alias ls='ls --color=auto'
 
