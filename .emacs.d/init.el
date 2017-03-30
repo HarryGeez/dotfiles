@@ -146,7 +146,7 @@
  '(initial-scratch-message nil)
  '(package-selected-packages
    (quote
-	(phi-search multiple-cursors delight general-close which-key company-irony irony helm persp-mode spaceline window-numbering company-tern company-c-headers company js2-mode base16-theme yasnippet web-mode typing iedit expand-region emmet-mode 2048-game))))
+	(yaml-mode magit rainbow-mode w3m helm-gtags phi-search multiple-cursors delight general-close which-key company-irony irony helm persp-mode spaceline window-numbering company-tern company-c-headers company js2-mode base16-theme yasnippet web-mode typing iedit expand-region emmet-mode 2048-game))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
