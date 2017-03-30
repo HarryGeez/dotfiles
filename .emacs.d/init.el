@@ -105,7 +105,7 @@
 	  ;;  spaceline
 	  (require 'spaceline-config)
 	  (setq-default powerline-default-separator 'wave) ; fix off-colors, must be in this order!
-	  (setq-default powerline-scale 1.3)
+	  (setq-default powerline-scale 1.5)
 	  (setq-default powerline-height (spacemacs/compute-powerline-height))
 	  (spaceline-spacemacs-theme)
 
