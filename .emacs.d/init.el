@@ -250,11 +250,7 @@
 ;;  Iedit
 ;;
 
-;; Set iedit toggle key to C-x ; because C-; doesn't work in OS X
-(define-key global-map (kbd "C-x ;") 'iedit-mode)
-(define-key isearch-mode-map (kbd "C-x ;") 'iedit-mode-from-isearch)
-(define-key esc-map (kbd "C-x ;") 'iedit-execute-last-modification)
-(define-key help-map (kbd "C-x ;") 'iedit-mode-toggle-on-function)
+(require 'iedit)
 
 
 ;;
@@ -262,7 +258,7 @@
 ;;
 
 (require 'expand-region)
-(global-set-key (kbd "C-c =") 'er/expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 
 ;;
