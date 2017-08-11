@@ -204,8 +204,22 @@
 			 (setq web-mode-code-indent-offset 2)
 			 (setq web-mode-style-padding 2)
 			 (setq web-mode-script-padding 2)
+			 (setq web-mode-enable-auto-pairing nil)
 			 (setq web-mode-enable-css-colorization t)))
 
+;; (define-key web-mode-map (kbd "C-c C-i") nil)
+
+(add-hook 'local-write-file-hooks
+		  (lambda ()
+			(delete-trailing-whitespace)
+			nil))
+
+(defun sp-web-mode-is-code-context (id action context)
+  (and (eq action 'insert)
+       (not (or (get-text-property (point) 'part-side)
+                (get-text-property (point) 'block-side)))))
+
+(sp-local-pair 'web-mode "<" nil :when '(sp-web-mode-is-code-context))
 
 
 ;;
