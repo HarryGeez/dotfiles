@@ -15,6 +15,13 @@ URxvt.letterSpace: -1
 URxvt.perl-ext-common: selection-to-clipboard
 URxvt*iso14755: false
 URxvt.internalBorder: 15
+Xft.dpi: 106
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
 
 ! special
 *.foreground:   #c0c5ce
