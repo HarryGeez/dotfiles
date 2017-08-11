@@ -48,6 +48,7 @@
    'iedit
    'irony
    'js2-mode
+   'markdown-mode
    'multiple-cursors
    'persp-mode
    'phi-search
@@ -330,6 +331,16 @@
 (add-to-list 'load-path "/usr/local/lib/node_modules/tern/emacs/")
 (autoload 'tern-mode "tern.el" nil t)
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+
+
+;;
+;;  markdown-mode
+;;
+
+(setq-default markdown-command "marked")
+(setq-default markdown-asymmetric-header t)
+(setq-default markdown-header-scaling t)
+(setq-default markdown-css-paths `(,"~/Git/github-markdown-css/github-markdown.css"))
 
 
 ;;
