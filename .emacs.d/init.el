@@ -48,17 +48,22 @@
    'iedit
    'irony
    'js2-mode
+   'magit
    'markdown-mode
    'multiple-cursors
    'persp-mode
    'phi-search
+   'pug-mode
    'rainbow-delimiters
+   'rainbow-mode
+   'rjsx-mode
    'smartparens
    'spaceline
    'tern
    'web-mode
    'which-key
    'window-numbering
+   'yaml-mode
    'yasnippet
    ))
 
