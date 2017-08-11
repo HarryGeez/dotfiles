@@ -328,7 +328,7 @@
 ;;  tern-mode
 ;;
 
-(add-to-list 'load-path "/usr/local/lib/node_modules/tern/emacs/")
+(add-to-list 'load-path "~/.config/yarn/global/node_modules/tern/emacs/")
 (autoload 'tern-mode "tern.el" nil t)
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
