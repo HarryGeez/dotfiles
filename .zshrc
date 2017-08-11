@@ -41,4 +41,4 @@ function md () { mkdir -p "$@" && cd "$@"; }
 
 autoload -U promptinit; promptinit
 prompt pure
-source /Users/weijiangan/Git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/Git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
