@@ -111,8 +111,7 @@
 ;;
 
 (require 'smartparens-config)
-(smartparens-strict-mode)
-(smartparens-global-mode 1)
+(smartparens-global-mode t)
 
 
 ;;
