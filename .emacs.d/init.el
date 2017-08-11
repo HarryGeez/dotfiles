@@ -105,6 +105,8 @@
 
 (global-set-key (kbd "C-c k") 'fake-kill-line)
 
+(add-hook 'dired-mode-hook 'auto-revert-mode)
+
 
 ;;
 ;;  smartparens-mode
