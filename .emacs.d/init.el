@@ -95,23 +95,6 @@
 ;; Press C-u C-x C-m to compile normally
 (global-set-key "\C-x\C-m" 'compile)
 
-(global-set-key (kbd "ESC <up>") 'beginning-of-buffer)
-(global-set-key (kbd "ESC <down>") 'end-of-buffer)
-
-;; Clear Eshell buffer
-(defun eshell-clear-buffer ()
-  "Clears the shell buffer ala Unix's clear or DOS' cls."
-  (interactive)
-  ;; the shell prompts are read-only, so clear that for the duration
-  (let ((inhibit-read-only t))
-	;; simply delete the region
-	(delete-region (point-min) (point-max))
-	(eshell-send-input)))
-
-(add-hook 'eshell-mode-hook
-		  '(lambda()
-			 (local-set-key (kbd "C-l") 'eshell-clear-buffer)))
-
 (defun fake-kill-line ()
   "Save the rest of the current line to the 'kill-ring'."
   (interactive)
