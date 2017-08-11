@@ -37,6 +37,8 @@ alias youreold="unset HISTFILE"
 
 alias ls='ls --color=auto'
 
+function md () { mkdir -p "$@" && cd "$@"; }
+
 autoload -U promptinit; promptinit
 prompt pure
 source /Users/weijiangan/Git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
