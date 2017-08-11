@@ -62,67 +62,6 @@
    ))
 
 
-;;
-;;  window-numbering-mode
-;;
-
-(defun window-numbering-install-mode-line (&optional position)
-  "Do nothing.")
-(window-numbering-mode)
-
-
-(defun spacemacs/compute-powerline-height ()
-  "Return an adjusted powerline height."
-  (let ((scale (if (and (boundp 'powerline-scale) powerline-scale)
-                   powerline-scale 1)))
-    (truncate (* scale (frame-char-height)))))
-
-
-(if (display-graphic-p)
-    (progn
-	  (load-theme 'base16-ocean t)
-	  ;; (defun invisible-fringes ()
-	  ;; 	(set-face-attribute 'fringe nil
-	  ;; 						:foreground (face-foreground 'default)
-	  ;; 						:background (face-background 'default)))
-	  ;; (invisible-fringes)
-	  (set-frame-font "Dejavu Sans Mono 10")
-	  ;; This is bound to f11 in Emacs 24.4
-	  ;; (toggle-frame-fullscreen)
-	  ;; Who use the bar to scroll?
-	  (scroll-bar-mode 0)
-	  ;; No toolbar
-	  (tool-bar-mode 0)
-	  ;; No menubar
-	  (menu-bar-mode 0)
-	  ;; No fringes
-	  (fringe-mode 0)
-	  ;;  spaceline
-	  (require 'spaceline-config)
-	  (setq-default powerline-default-separator 'wave) ; fix off-colors, must be in this order!
-	  (setq-default powerline-scale 1.3)
-	  (setq-default powerline-height (spacemacs/compute-powerline-height))
-	  (spaceline-spacemacs-theme)
-
-	  ;;  delight
-	  (require 'delight)
-	  (delight '((company-mode "Ⓐ" company)
-	  			 (smartparens-mode "ⓟ" smartparens)
-	  			 (yas-minor-mode "ⓨ" yasnippet)
-	  			 (golden-ratio-mode "ⓖ" golden-ratio)
-	  			 (visual-line-mode "Ⓦ" simple)
-	  			 (abbrev-mode "ⓐ" abbrev)
-	  			 (helm-mode "Ⓗ" helm)
-	  			 (irony-mode "Ⓘ" irony)
-	  			 (which-key-mode nil which-key)
-	  			 (flycheck-mode nil flycheck)
-	  			 ))
-	  )
-  ;; else
-  ;; No menubar
-  (menu-bar-mode 0))
-
-
 ;; Disable startup message
 (setq inhibit-startup-message t)
 
@@ -473,6 +412,68 @@
 ;; (golden-ratio-mode 1)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+
+;;
+;;  window-numbering-mode
+;;
+
+(defun window-numbering-install-mode-line (&optional position)
+  "Do nothing.")
+(window-numbering-mode)
+
+
+(defun spacemacs/compute-powerline-height ()
+  "Return an adjusted powerline height."
+  (let ((scale (if (and (boundp 'powerline-scale) powerline-scale)
+                   powerline-scale 1)))
+    (truncate (* scale (frame-char-height)))))
+
+
+(if (display-graphic-p)
+    (progn
+	  (load-theme 'snazzy t)
+	  ;; (defun invisible-fringes ()
+	  ;; 	(set-face-attribute 'fringe nil
+	  ;; 						:foreground (face-foreground 'default)
+	  ;; 						:background (face-background 'default)))
+	  ;; (invisible-fringes)
+	  (add-to-list 'default-frame-alist '(font . "SF Mono 13"))
+	  ;; This is bound to f11 in Emacs 24.4
+	  ;; (toggle-frame-fullscreen)
+	  ;; Who use the bar to scroll?
+	  (scroll-bar-mode 0)
+	  ;; No toolbar
+	  (tool-bar-mode 0)
+	  ;; ;; No menubar
+	  ;; (menu-bar-mode 0)
+	  ;; No fringes
+	  (fringe-mode 0)
+	  ;;  spaceline
+	  (require 'spaceline-config)
+	  (setq-default powerline-image-apple-rgb nil)
+	  (setq-default powerline-default-separator "wave") ; fix off-colors, must be in this order!
+	  (setq-default powerline-scale 1.5)
+	  (setq-default powerline-height (spacemacs/compute-powerline-height))
+	  (spaceline-spacemacs-theme)
+
+	  ;;  delight
+	  (require 'delight)
+	  (delight '((company-mode "Ⓐ" company)
+	  			 (smartparens-mode "ⓟ" smartparens)
+	  			 (yas-minor-mode "ⓨ" yasnippet)
+	  			 (golden-ratio-mode "ⓖ" golden-ratio)
+	  			 (visual-line-mode "Ⓦ" simple)
+	  			 (abbrev-mode "ⓐ" abbrev)
+	  			 (helm-mode "Ⓗ" helm)
+	  			 (irony-mode "Ⓘ" irony)
+	  			 (which-key-mode nil which-key)
+	  			 (flycheck-mode nil flycheck)
+	  			 ))
+	  )
+  ;; else
+  ;; No menubar
+  (menu-bar-mode 0))
 
 
 (provide 'init)
