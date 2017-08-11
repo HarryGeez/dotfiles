@@ -58,3 +58,7 @@ Temporary Items
 
 # Node
 node_modules/
+
+# Tern
+.tern-port
+
