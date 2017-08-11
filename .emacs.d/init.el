@@ -123,7 +123,7 @@
 ;; More indentation settings; Set tab-width to 4.
 (setq-default c-basic-offset 4
 			  tab-width 4
-			  indent-tabs-mode t)
+			  indent-tabs-mode nil)
 ;; Map "newline-and-indent" to RET
 (require 'cc-mode)
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
