@@ -482,8 +482,10 @@
 	  			 (abbrev-mode "ⓐ" abbrev)
 	  			 (helm-mode "Ⓗ" helm)
 	  			 (irony-mode "Ⓘ" irony)
+                 (whitespace-mode "ⓦ")
 	  			 (which-key-mode nil which-key)
 	  			 (flycheck-mode nil flycheck)
+                 (persp-mode nil)
 	  			 ))
 	  )
   ;; else
