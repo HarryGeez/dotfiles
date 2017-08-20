@@ -1,3 +1,4 @@
+!! XTerm config
 xterm*faceName: Inconsolata:size=10:antialias=true
 !xterm*faceName: DejaVu Sans Mono:size=8
 xterm*faceNameDoublesize: Source Han Sans:size=8:antialias true
@@ -9,6 +10,8 @@ xterm*vt100.translations: #override \
 	Shift <KeyPress> Down:    scroll-forw(1, line) \n\
 	Ctrl Shift <KeyPress> C:  select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
 	Ctrl Shift <KeyPress> V:  insert-selection(CLIPBOARD, CUT_BUFFER0, PRIMARY) \n
+
+!! URxvt config
 URxvt.font: xft:Inconsolata:size=10
 URxvt.scrollBar: false
 URxvt.letterSpace: -1
@@ -16,12 +19,16 @@ URxvt.perl-ext-common: selection-to-clipboard
 URxvt*iso14755: false
 URxvt.internalBorder: 15
 Xft.dpi: 106
+
+!! Font rendering
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
+
+!! Color scheme
 
 ! special
 *.foreground:   #c0c5ce
