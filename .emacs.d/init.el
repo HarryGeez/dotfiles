@@ -56,7 +56,7 @@
    'tern
    'web-mode
    'which-key
-   'window-numbering
+   'winum
    'yaml-mode
    'yasnippet
    ))
@@ -429,10 +429,8 @@
 ;;  window-numbering-mode
 ;;
 
-(defun window-numbering-install-mode-line (&optional position)
-  "Do nothing.")
-(window-numbering-mode)
-
+(setq winum-auto-setup-mode-line nil)
+(winum-mode)
 
 (defun spacemacs/compute-powerline-height ()
   "Return an adjusted powerline height."
