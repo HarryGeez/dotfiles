@@ -458,13 +458,19 @@
 	  ;; (menu-bar-mode 0)
 	  ;; No fringes
 	  (fringe-mode 0)
-	  ;;  spaceline
+
+	  ;; Spaceline
 	  (require 'spaceline-config)
 	  (setq-default powerline-image-apple-rgb nil)
 	  (setq-default powerline-default-separator "wave") ; fix off-colors, must be in this order!
 	  (setq-default powerline-scale 1.5)
 	  (setq-default powerline-height (spacemacs/compute-powerline-height))
+      (setq-default spaceline-window-numbers-unicode t)
+      (setq-default spaceline-minor-modes-separator " ")
+      (spaceline-toggle-buffer-position-off)
+      (spaceline-toggle-hud-off)
 	  (spaceline-spacemacs-theme)
+      (spaceline-helm-mode)
 
 	  ;;  delight
 	  (require 'delight)
