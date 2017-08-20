@@ -18,9 +18,9 @@ URxvt.letterSpace: -1
 URxvt.perl-ext-common: selection-to-clipboard
 URxvt*iso14755: false
 URxvt.internalBorder: 15
-Xft.dpi: 106
 
 !! Font rendering
+Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
