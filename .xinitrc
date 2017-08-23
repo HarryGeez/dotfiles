@@ -35,5 +35,5 @@ fi
 setxkbmap -option caps:nocaps
 setxkbmap -option altwin:swap_lalt_lwin
 compton -b
-hsetroot -solid "#474f5f"
+hsetroot -solid "#2f3040"
 exec i3
