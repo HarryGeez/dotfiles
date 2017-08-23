@@ -62,3 +62,6 @@ node_modules/
 # Tern
 .tern-port
 
+# sass
+.sass-cache
+
