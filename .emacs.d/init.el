@@ -42,6 +42,7 @@
    'iedit
    'irony
    'js2-mode
+   'js2-refactor
    'magit
    'markdown-mode
    'multiple-cursors
@@ -57,6 +58,7 @@
    'web-mode
    'which-key
    'winum
+   'xref-js2
    'yaml-mode
    'yasnippet
    ))
@@ -311,25 +313,35 @@
 
 
 ;;
-;;  js2-mode
-;;
-
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
-(add-hook 'js2-mode-hook (lambda () (setq-default js2-basic-offset 2)))
-
-
-(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
-
-
-;;
 ;;  tern-mode
 ;;
 
 (add-to-list 'load-path "~/.config/yarn/global/node_modules/tern/emacs/")
 (autoload 'tern-mode "tern.el" nil t)
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+;; (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+
+
+;;
+;;  js2-mode
+;;
+
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+(define-key js2-mode-map (kbd "M-.") nil)
+(add-hook 'js2-mode-hook
+          (lambda ()
+            (setq js2-basic-offset 2)
+            (tern-mode t)
+            (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)
+            (prettier-js-mode)))
+
+;;
+;; rjsx-mode
+;;
+
+(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
 
 
 ;;
