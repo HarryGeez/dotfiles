@@ -390,7 +390,7 @@
           'spacemacs//helm-hide-minibuffer-maybe)
 
 (setq-default helm-autoresize-max-height 0)
-(setq-default helm-autoresize-min-height 20)
+(setq-default helm-autoresize-min-height 30)
 (helm-autoresize-mode 1)
 
 
