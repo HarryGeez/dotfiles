@@ -39,6 +39,7 @@ alias ls='ls --color=auto'
 
 function md () { mkdir -p "$@" && cd "$@"; }
 
+fpath=( "$HOME/dotfiles/zsh/zfunctions" $fpath )
 autoload -U promptinit; promptinit
 prompt pure
-source ~/Git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
