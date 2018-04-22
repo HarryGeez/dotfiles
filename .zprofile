@@ -6,3 +6,4 @@ export PATH="/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:/opt/local
 
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 alias emacs='~/Applications/MacPorts/Emacs.app/Contents/MacOS/Emacs'
+source .docker_containers
