@@ -1,8 +1,10 @@
-alias run-mysql="docker run -d --name mysql-docker \
+alias run-mysql="docker run \
+--detach \
+--name mysql \
 --mount source=learn-db,target=/var/lib/mysql \
--v ~/Desktop:/var/mysql_files \
--e MYSQL_ALLOW_EMPTY_PASSWORD=true \
--p 3308:3306 
+--volume ~/Desktop:/var/mysql_files \
+--env MYSQL_ALLOW_EMPTY_PASSWORD=true \
+--publish 3308:3306 \
 mysql:latest \
 --character-set-server=utf8mb4 \
 --collation-server=utf8mb4_unicode_ci"
@@ -10,10 +12,12 @@ mysql:latest \
 alias start-mysql="docker start mysql-docker"
 alias mysql="docker exec -it mysql-docker mysql"
 
-alias run-postgres="docker run --name postgres \
--e POSTGRES_PASSWORD=123456 \
--p 5432:5432 \
--d postgres"
+alias run-postgres="docker run \
+--detach \
+--name postgres \
+--env POSTGRES_PASSWORD=123456 \
+--publish 5432:5432 \
+postgres"
 
 alias start-postgres="docker start postgres"
 alias createdb="docker exec -it postgres createdb"
