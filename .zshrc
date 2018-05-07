@@ -39,6 +39,8 @@ alias ls='ls --color=auto'
 
 function md () { mkdir -p "$@" && cd "$@"; }
 
+alias grepr='grep --color -nR'
+
 fpath=( "$HOME/dotfiles/zsh/zfunctions" $fpath )
 autoload -U promptinit; promptinit
 prompt pure
