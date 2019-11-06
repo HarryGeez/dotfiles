@@ -35,7 +35,11 @@ alias youreold="unset HISTFILE"
 #     find ${1:-.} -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
 # }
 
-alias ls='ls --color=auto'
+case "$OSTYPE" in
+    linux*)
+        alias ls='ls --color=auto'
+        ;;
+esac
 
 function md () { mkdir -p "$@" && cd "$@"; }
 
