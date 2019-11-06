@@ -85,10 +85,6 @@
   :ensure t
   :defer t)
 
-(use-package company-tern
-  :ensure t
-  :defer t)
-
 (use-package delight
   :ensure t
   :defer t)
@@ -203,9 +199,8 @@
   (add-hook 'js2-mode-hook
             (lambda ()
               (setq js2-basic-offset 2)
-              (tern-mode t)
               ;; (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)
-              (set (make-local-variable 'company-backends) '(company-tern)))))
+              )))
 
 (use-package js2-refactor
   :ensure t
@@ -320,13 +315,6 @@
   (spaceline-toggle-hud-off)
   (spaceline-spacemacs-theme)
   (spaceline-helm-mode))
-
-(use-package tern
-  :delight "Ⓣ"
-  :ensure t
-  :commands (tern-mode)
-  :defer t
-  :load-path "~/.config/yarn/global/node_modules/tern/emacs/")
 
 (use-package web-mode
   :ensure t
