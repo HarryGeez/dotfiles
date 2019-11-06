@@ -186,6 +186,12 @@
   (((c++-mode c-mode objc-mode) . irony-mode)
    (irony-mode . irony-cdb-autosetup-compile-options)))
 
+(use-package js
+  :init
+  (add-hook 'js-mode-hook
+            (lambda ()
+              (setq js-indent-level 2))))
+
 (use-package js2-mode
   :ensure t
   :bind (:map js2-mode-map ("M-." . nil))
