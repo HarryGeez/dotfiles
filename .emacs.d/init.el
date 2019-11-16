@@ -305,17 +305,18 @@
     (let ((scale (if (and (boundp 'powerline-scale) powerline-scale)
                      powerline-scale 1)))
       (truncate (* scale (frame-char-height)))))
+  :init
+  (setq-default powerline-image-apple-rgb nil)
+  (setq-default powerline-default-separator "wave") ; fix off-colors, must be in this order!
+  (setq-default powerline-scale 1.5)
+  (setq-default powerline-height (spacemacs/compute-powerline-height))
+  (setq-default spaceline-window-numbers-unicode t)
+  (setq-default spaceline-minor-modes-separator " ")
   (require 'spaceline-config)
-  (setq powerline-image-apple-rgb nil)
-  (setq powerline-default-separator "wave") ; fix off-colors, must be in this order!
-  (setq powerline-scale 1.5)
-  (setq powerline-height (spacemacs/compute-powerline-height))
-  (setq spaceline-window-numbers-unicode t)
-  (setq spaceline-minor-modes-separator " ")
   :config
-  (spaceline-toggle-buffer-position-off)
-  (spaceline-toggle-hud-off)
   (spaceline-spacemacs-theme)
+  (spaceline-toggle-buffer-size-off)
+  (spaceline-toggle-hud-off)
   (spaceline-helm-mode))
 
 (use-package typescript-mode
