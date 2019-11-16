@@ -383,9 +383,8 @@
 (use-package yasnippet
   :ensure t
   :defer t
-  ;; :config
-  ;; (yas-global-mode 1)
-  )
+  :init
+  (diminish 'yas-minor-mode "ⓨ"))
 
 (use-package cc-mode
   :no-require t
