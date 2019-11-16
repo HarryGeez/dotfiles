@@ -249,7 +249,7 @@
   :ensure t
   :defer t
   :hook
-  (js2-mode . prettier-js-mode))
+  ((js2-mode js-mode css-mode scss-mode graphql-mode web-mode) . prettier-js-mode))
 
 (use-package protobuf-mode
   :ensure t
