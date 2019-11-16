@@ -318,6 +318,10 @@
   (spaceline-spacemacs-theme)
   (spaceline-helm-mode))
 
+(use-package typescript-mode
+  :ensure t
+  :defer t)
+
 (use-package web-mode
   :ensure t
   :mode ("\\.phtml\\'" "\\.tpl\\.php\\'" "\\.[agj]sp\\'" "\\.as[cp]x\\'" "\\.erb\\'"
