@@ -277,6 +277,7 @@
   :ensure t
   :defer 7
   :config
+  (require 'smartparens-config)
   (smartparens-global-mode t))
 
 (use-package snazzy-theme
