@@ -63,6 +63,10 @@
   :defer t
   :bind ("C-c SPC" . ace-jump-mode))
 
+(use-package clang-format
+  :ensure t
+  :defer t)
+
 (use-package company
   :diminish "Ⓐ"
   :ensure t
@@ -425,6 +429,7 @@
   :init
   (add-hook 'c-mode-hook
             (lambda ()
+              (add-hook 'before-save-hook 'clang-format-buffer nil 'make-it-local)
               (when (not (equal buffer-file-name nil))
                 (set (make-local-variable 'compile-command)
                      (concat "gcc " (shell-quote-argument buffer-file-name)))))))
