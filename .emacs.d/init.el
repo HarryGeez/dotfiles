@@ -326,6 +326,11 @@
   :ensure t
   :mode ("\\.phtml\\'" "\\.tpl\\.php\\'" "\\.[agj]sp\\'" "\\.as[cp]x\\'" "\\.erb\\'"
          "\\.mustache\\'" "\\.djhtml\\'" "\\.html?\\'")
+  :preface
+  (defun sp-web-mode-is-code-context (id action context)
+    (and (eq action 'insert)
+         (not (or (get-text-property (point) 'part-side)
+                  (get-text-property (point) 'block-side)))))
   :init
   (add-hook 'web-mode-hook
             '(lambda()
@@ -340,10 +345,7 @@
             (lambda ()
               (delete-trailing-whitespace)
               nil))
-  (defun sp-web-mode-is-code-context (id action context)
-    (and (eq action 'insert)
-         (not (or (get-text-property (point) 'part-side)
-                  (get-text-property (point) 'block-side)))))
+  :config
   (sp-local-pair 'web-mode "<" nil :when '(sp-web-mode-is-code-context)))
 
 (use-package which-key
