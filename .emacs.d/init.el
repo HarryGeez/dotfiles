@@ -131,7 +131,6 @@
   :defer t)
 
 (use-package helm
-  :if window-system
   ;; :diminish "Ⓗ"
   :diminish
   :ensure t
