@@ -387,8 +387,8 @@
   :bind (:map c-mode-base-map ([ret] . newline-and-indent))
   :config
   (setq-default c-default-style "linux")
-  (setq-default c-basic-offset 4
-                tab-width 4
+  (setq-default c-basic-offset 2
+                tab-width 2
                 indent-tabs-mode nil)
   ;; (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
   )
