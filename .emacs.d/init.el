@@ -139,24 +139,9 @@
   :bind (("M-x" . helm-M-x)
          ("M-y" . helm-show-kill-ring)
          ("C-x b" . helm-mini)
-         ("C-x C-f" . helm-find-files)
-         ("C-c h o" . helm-occur))
-  :init
-  (require 'helm-config)
-  (setq helm-buffers-fuzzy-matching            t)
-  (setq helm-echo-input-in-header-line         t)
-  (setq helm-ff-file-name-history-use-recentf  t)
-  ;; search for library in `require' and `declare-function' sexp.
-  (setq helm-ff-search-library-in-sexp         t)
-  ;; move to end or beginning of source when reaching top or bottom of source.
-  (setq helm-move-to-line-cycle-in-source      t)
-  (setq helm-recentf-fuzzy-match               t)
-  ;; scroll 8 lines other window using M-<next>/M-<prior>
-  (setq helm-scroll-amount                     8)
-  ;; open helm buffer inside current window, not occupy whole other window
-  (setq helm-split-window-inside-p            t)
-  (setq helm-autoresize-max-height             0)
-  (setq helm-autoresize-min-height            30)
+         ("C-c h o" . helm-occur)
+         ("C-x C-f" . helm-find-files))
+  :preface
   (defun spacemacs//helm-hide-minibuffer-maybe ()
     "Hide minibuffer in Helm session if we use the header line as input field."
     (when (with-helm-buffer helm-echo-input-in-header-line)
@@ -166,9 +151,22 @@
                      (let ((bg-color (face-background 'default nil)))
                        `(:background ,bg-color :foreground ,bg-color)))
         (setq-local cursor-type nil))))
+  :config
+  (require 'helm-config)
+  (setq-default helm-buffers-fuzzy-matching            t)
+  (setq-default helm-ff-file-name-history-use-recentf  t)
+  (setq-default helm-ff-search-library-in-sexp         t)
+  (setq-default helm-recentf-fuzzy-match               t)
+  (setq helm-echo-input-in-header-line                 t)
+  (setq helm-move-to-line-cycle-in-source              t)
+  ;; scroll 8 lines other window using M-<next>/M-<prior>
+  (setq helm-scroll-amount                             8)
+  ;; open helm buffer inside current window, not occupy whole other window
+  (setq helm-split-window-inside-p                     t)
+  (setq helm-autoresize-max-height                     0)
+  (setq helm-autoresize-min-height                    30)
   (add-hook 'helm-minibuffer-set-up-hook
             'spacemacs//helm-hide-minibuffer-maybe)
-  :config
   (helm-mode 1)
   (helm-autoresize-mode 1))
 
