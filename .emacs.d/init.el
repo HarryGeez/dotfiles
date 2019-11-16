@@ -59,7 +59,7 @@
   :hook (js2-mode))
 
 (use-package company
-  :delight "Ⓐ"
+  :diminish "Ⓐ"
   :ensure t
   :hook ((js2-mode go-mode) . company-mode)
   :init
@@ -85,9 +85,10 @@
   :ensure t
   :defer t)
 
-(use-package delight
+(use-package diminish
   :ensure t
-  :defer t)
+  :config
+  (diminish 'eldoc-mode "ⓔ"))
 
 (use-package disable-mouse
   :disabled
@@ -106,7 +107,7 @@
   :bind ("C-c =" . er/expand-region))
 
 (use-package flycheck
-  :delight
+  :diminish
   :ensure t
   :defer t
   :init
@@ -123,13 +124,14 @@
               (set (make-local-variable 'company-backends) '(company-go)))))
 
 (use-package golden-ratio
-  :delight "ⓖ"
+  :diminish "ⓖ"
   :ensure t
   :defer t)
 
 (use-package helm
   :if window-system
-  :delight "Ⓗ"
+  ;; :diminish "Ⓗ"
+  :diminish
   :ensure t
   :commands (helm-mode helm-autoresize-mode)
   :bind (("M-x" . helm-M-x)
@@ -173,7 +175,7 @@
   :defer 3)
 
 (use-package irony
-  :delight "Ⓘ"
+  :diminish "Ⓘ"
   :ensure t
   :bind (:map irony-mode-map
               ("<remap> <completion-at-point>" . irony-completion-at-point-async)
@@ -225,7 +227,7 @@
 
 (use-package persp-mode
   :disabled
-  :delight
+  :diminish
   :ensure t
   :commands (persp-mode)
   :defer t
@@ -240,7 +242,7 @@
   :defer t)
 
 (use-package prettier-js
-  :delight "Ⓟ"
+  :diminish "Ⓟ"
   :ensure t
   :defer t
   :hook
@@ -273,7 +275,7 @@
   :mode "components\\/.*\\.js\\'")
 
 (use-package smartparens
-  :delight "ⓟ"
+  :diminish "ⓟ"
   :ensure t
   :commands (smartparens-global-mode)
   :defer t
@@ -341,7 +343,7 @@
   (sp-local-pair 'web-mode "<" nil :when '(sp-web-mode-is-code-context)))
 
 (use-package which-key
-  :delight
+  :diminish
   :ensure t
   :commands (which-key-mode which-key-setup-side-window-bottom)
   :defer 2
@@ -379,7 +381,6 @@
   :defer t)
 
 (use-package yasnippet
-  :delight "ⓨ"
   :ensure t
   :commands (yas-global-mode)
   :defer t
@@ -429,15 +430,15 @@
               (setq comint-prompt-read-only t))))
 
 (use-package visual-line-mode
-  :delight "Ⓦ"
+  :diminish "Ⓦ"
   :defer t)
 
 (use-package abbrev
-  :delight "ⓐ"
+  :diminish "ⓐ"
   :defer t)
 
 (use-package whitespace
-  :delight "ⓦ"
+  :diminish "ⓦ"
   :defer t)
 
 (defun fake-kill-line ()
