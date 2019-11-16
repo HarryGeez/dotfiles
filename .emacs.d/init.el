@@ -171,7 +171,8 @@
   (helm-autoresize-mode 1))
 
 (use-package iedit
-  :ensure t)
+  :ensure t
+  :bind ("C-;" . iedit-mode))
 
 (use-package irony
   :diminish "Ⓘ"
