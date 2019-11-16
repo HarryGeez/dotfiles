@@ -211,6 +211,7 @@
   (add-hook 'js2-mode-hook
             (lambda ()
               (setq js2-basic-offset 2)
+              (setq tab-width 2)
               ;; (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)
               )))
 
@@ -230,7 +231,7 @@
 (use-package magit
   :ensure t
   :bind (("C-x g" . magit-status)
-     ("C-x C-j" . magit-dired-jump)))
+         ("C-x C-j" . magit-dired-jump)))
 
 (use-package markdown-mode
   :ensure t

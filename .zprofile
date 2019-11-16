@@ -3,7 +3,8 @@
 # export GOPATH=$(go env GOPATH)
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH="$HOME/Library/Android/sdk/platform-tools:/opt/local/libexec/gnubin:$HOME/Applications/MacPorts/EmacsMac.app/Contents/MacOS:/opt/local/bin:/opt/local/sbin:/opt/local/lib/mysql56/bin:$PATH:$GOBIN"
+export GO111MODULE=on
+export PATH="$HOME/Library/Android/sdk/platform-tools:/usr/local/Cellar/emacs-mac/emacs-26.1-z-mac-7.4/bin:/usr/local/bin:/usr/local/sbin:$PATH:$GOBIN"
 export LC_ALL="en_US.UTF-8"
 
 case "$OSTYPE" in

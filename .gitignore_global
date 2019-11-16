@@ -57,7 +57,7 @@ Temporary Items
 .apdisk
 
 # Node
-node_modules/
+node_modules/*
 
 # Tern
 .tern-port
