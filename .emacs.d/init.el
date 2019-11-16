@@ -275,7 +275,7 @@
 
 (use-package rjsx-mode
   :ensure t
-  :mode "components\\/.*\\.js\\'")
+  :mode ("components\\/.*\\.js\\'" "\\.mjs\\'" "\\.cjs\\'"))
 
 (use-package smartparens
   :diminish "ⓟ"
