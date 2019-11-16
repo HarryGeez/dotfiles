@@ -98,13 +98,11 @@
 (use-package disable-mouse
   :disabled
   :ensure t
-  :defer t
   :config
   (global-disable-mouse-mode))
 
 (use-package emmet-mode
   :ensure t
-  :defer t
   :hook (web-mode sgml-mode css-mode))
 
 (use-package expand-region
@@ -114,7 +112,6 @@
 (use-package flycheck
   :diminish
   :ensure t
-  :defer t
   :init
   (add-hook 'after-init-hook #'global-flycheck-mode))
 
@@ -176,8 +173,7 @@
   (helm-autoresize-mode 1))
 
 (use-package iedit
-  :ensure t
-  :defer 3)
+  :ensure t)
 
 (use-package irony
   :diminish "Ⓘ"
@@ -215,7 +211,8 @@
 
 (use-package magit
   :ensure t
-  :defer t)
+  :bind (("C-x g" . magit-status)
+     ("C-x C-j" . magit-dired-jump)))
 
 (use-package markdown-mode
   :ensure t
@@ -283,9 +280,9 @@
   :diminish "ⓟ"
   :ensure t
   :commands (smartparens-global-mode)
-  :defer t
   :init
   (require 'smartparens-config)
+  :defer 7
   :config
   (smartparens-global-mode t))
 
@@ -349,9 +346,9 @@
 
 (use-package which-key
   :diminish
+  :defer 5
   :ensure t
   :commands (which-key-mode which-key-setup-side-window-bottom)
-  :defer 2
   :config
   (which-key-mode)
   (which-key-setup-side-window-bottom))
@@ -359,7 +356,7 @@
 (use-package winum
   :ensure t
   :commands (winum-mode)
-  :defer 2
+  :defer 6
   :bind (:map winum-keymap
               ("C-`" . winum-select-window-by-number)
               ("C-²" . winum-select-window-by-number)
