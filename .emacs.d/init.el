@@ -116,9 +116,9 @@
   :config
   (add-hook 'go-mode-hook
             (lambda ()
-              (add-hook 'after-save-hook 'gofmt-before-save nil 'make-it-local)
               (setq tab-width 4)
-              (set (make-local-variable 'company-backends) '(company-go)))))
+              (setq gofmt-command "goimports")
+              (add-hook 'before-save-hook 'gofmt-before-save nil 'make-it-local))))
 
 (use-package golden-ratio
   :diminish "ⓖ"
