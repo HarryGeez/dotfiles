@@ -134,6 +134,7 @@
   ;; :diminish "Ⓗ"
   :diminish
   :ensure t
+  :demand
   :commands (helm-mode helm-autoresize-mode)
   :bind (("M-x" . helm-M-x)
          ("M-y" . helm-show-kill-ring)
