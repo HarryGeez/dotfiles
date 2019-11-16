@@ -130,6 +130,11 @@
   :ensure t
   :defer t)
 
+(use-package graphql-mode
+  :ensure t
+  :mode ("\\.prisma\\'")
+  :defer t)
+
 (use-package helm
   ;; :diminish "Ⓗ"
   :diminish
