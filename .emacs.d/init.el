@@ -386,6 +386,7 @@
   )
 
 (use-package cc-mode
+  :no-require t
   :defer t
   :bind (:map c-mode-base-map ([ret] . newline-and-indent))
   :init
@@ -397,6 +398,7 @@
   )
 
 (use-package c-mode
+  :no-require t
   :defer t
   :init
   (add-hook 'c-mode-hook
@@ -412,14 +414,17 @@
   (setq compilation-read-command nil))
 
 (use-package css-mode
+  :no-require t
   :init
   (setq css-indent-offset 2))
 
 (use-package dired
+  :no-require t
   :defer t
   :hook (dired-mode . auto-revert-mode))
 
 (use-package octave
+  :no-require t
   :defer t
   :init
   (add-hook 'inferior-octave-mode-hook
@@ -427,14 +432,17 @@
               (setq comint-prompt-read-only t))))
 
 (use-package visual-line-mode
+  :no-require t
   :diminish "Ⓦ"
   :defer t)
 
 (use-package abbrev
+  :no-require t
   :diminish "ⓐ"
   :defer t)
 
 (use-package whitespace
+  :no-require t
   :diminish "ⓦ"
   :defer t)
 
