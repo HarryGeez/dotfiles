@@ -108,8 +108,7 @@
 (use-package flycheck
   :diminish
   :ensure t
-  :init
-  (add-hook 'after-init-hook #'global-flycheck-mode))
+  :hook (after-init . global-flycheck-mode))
 
 (use-package go-mode
   :ensure t
