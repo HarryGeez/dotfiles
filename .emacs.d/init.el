@@ -438,6 +438,11 @@
   :diminish "ⓦ"
   :defer t)
 
+(use-package recentf
+  :no-require t
+  :custom
+  (recentf-max-saved-items 300))
+
 (defun fake-kill-line ()
   "Save the rest of the current line to the 'kill-ring'."
   (interactive)
