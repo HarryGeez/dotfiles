@@ -24,7 +24,7 @@ else
     GROUP_ID=`/usr/bin/stat -f "%g" /dev/console`
 fi
 
-/opt/local/bin/ntfs-3g \
+/usr/local/bin/ntfs-3g \
     -o volname="${VOLUME_NAME}" \
     -o local \
     -o negative_vncache \

@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 alias run-mysql="docker run \
 --detach \
 --name mysql \
@@ -9,17 +11,17 @@ mysql:latest \
 --character-set-server=utf8mb4 \
 --collation-server=utf8mb4_unicode_ci"
 
-alias start-mysql="docker start mysql-docker"
-alias mysql="docker exec -it mysql-docker mysql"
+alias start-mysql="docker start mysql"
+alias mysql="docker exec -it mysql mysql"
 
 alias run-postgres="docker run \
 --detach \
 --name postgres \
 --env POSTGRES_PASSWORD=123456 \
 --publish 5432:5432 \
-postgres"
+postgres:alpine"
 
 alias start-postgres="docker start postgres"
 alias createdb="docker exec -it postgres createdb"
 alias dropdb="docker exec -it postgres dropdb"
-alias psql="docker exec -it postgres psql"
+alias psql="docker exec -it postgres psql -U postgres"
