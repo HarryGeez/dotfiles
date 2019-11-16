@@ -86,6 +86,13 @@
   :ensure t
   :defer t)
 
+(use-package company-lsp
+  :defer t
+  :commands company-lsp
+  ;; :config
+  ;; (setq company-lsp-cache-candidates nil)
+  )
+
 (use-package diminish
   :ensure t
   :config
@@ -206,6 +213,15 @@
 (use-package js2-refactor
   :ensure t
   :defer t)
+
+(use-package lsp-mode
+  :diminish "Ⓛ"
+  :commands (lsp lsp-deferred)
+  :custom
+  (lsp-prefer-flymake :none)
+  :hook ((js2-mode go-mode) . lsp-deferred)
+  :init
+  (require 'yasnippet))
 
 (use-package magit
   :ensure t
