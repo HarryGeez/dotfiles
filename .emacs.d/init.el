@@ -413,12 +413,6 @@
                 (set (make-local-variable 'compile-command)
                      (concat "gcc " (shell-quote-argument buffer-file-name)))))))
 
-(use-package compile
-  :bind ("C-x C-m" . compile)
-  :init
-  ;; Compile wo/ prompt
-  (setq compilation-read-command nil))
-
 (use-package css-mode
   :no-require t
   :init
