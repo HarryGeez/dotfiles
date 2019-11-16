@@ -355,23 +355,20 @@
 
 (use-package winum
   :ensure t
-  :commands (winum-mode)
   :defer 6
-  :bind (:map winum-keymap
-              ("C-`" . winum-select-window-by-number)
-              ("C-²" . winum-select-window-by-number)
-              ("M-0" . winum-select-window-0-or-10)
-              ("M-1" . winum-select-window-1)
-              ("M-2" . winum-select-window-2)
-              ("M-3" . winum-select-window-3)
-              ("M-4" . winum-select-window-4)
-              ("M-5" . winum-select-window-5)
-              ("M-6" . winum-select-window-6)
-              ("M-7" . winum-select-window-7)
-              ("M-8" . winum-select-window-8))
-  :init
-  (setq winum-auto-setup-mode-line nil)
+  :bind (("C-`" . winum-select-window-by-number)
+         ("C-²" . winum-select-window-by-number)
+         ("s-0" . winum-select-window-0-or-10)
+         ("s-1" . winum-select-window-1)
+         ("s-2" . winum-select-window-2)
+         ("s-3" . winum-select-window-3)
+         ("s-4" . winum-select-window-4)
+         ("s-5" . winum-select-window-5)
+         ("s-6" . winum-select-window-6)
+         ("s-7" . winum-select-window-7)
+         ("s-8" . winum-select-window-8))
   :config
+  (setq winum-auto-setup-mode-line nil)
   (winum-mode))
 
 (use-package xref-js2
