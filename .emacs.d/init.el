@@ -260,6 +260,15 @@
   :ensure t
   :defer t)
 
+(use-package qml-mode
+  :defer t
+  :config
+  (add-hook 'qml-mode-hook
+            (lambda ()
+              (setq tab-width 4)
+              (set (make-local-variable 'company-backends) '(company-lsp))
+              (prettier-js-mode))))
+
 (use-package rainbow-delimiters
   :ensure t
   :defer t)
