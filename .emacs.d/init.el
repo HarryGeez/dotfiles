@@ -118,7 +118,7 @@
 (use-package go-mode
   :ensure t
   :defer t
-  :init
+  :config
   (add-hook 'go-mode-hook
             (lambda ()
               (add-hook 'after-save-hook 'gofmt-before-save nil 'make-it-local)
@@ -215,7 +215,7 @@
 (use-package markdown-mode
   :ensure t
   :defer t
-  :init
+  :config
   (setq markdown-command "marked")
   (setq markdown-asymmetric-header t)
   (setq markdown-header-scaling t)
@@ -229,12 +229,10 @@
   :disabled
   :diminish
   :ensure t
-  :commands (persp-mode)
   :defer t
-  :init
+  :config
   (setq wg-morph-on nil) ;; switch off animation
   (setq persp-autokill-buffer-on-remove 'kill-weak)
-  :config
   (persp-mode 1))
 
 (use-package phi-search
@@ -277,9 +275,6 @@
 (use-package smartparens
   :diminish "ⓟ"
   :ensure t
-  :commands (smartparens-global-mode)
-  :init
-  (require 'smartparens-config)
   :defer 7
   :config
   (smartparens-global-mode t))
@@ -296,10 +291,8 @@
 (use-package spaceline
   :if window-system
   :ensure t
-  :commands (spaceline-toggle-buffer-position-off spaceline-toggle-hud-off
-                                                  spaceline-spacemacs-theme spaceline-helm-mode)
   :defer t
-  :init
+  :preface
   (defun spacemacs/compute-powerline-height ()
     "Return an adjusted powerline height."
     (let ((scale (if (and (boundp 'powerline-scale) powerline-scale)
@@ -353,10 +346,8 @@
   :diminish
   :defer 5
   :ensure t
-  :commands (which-key-mode which-key-setup-side-window-bottom)
   :config
-  (which-key-mode)
-  (which-key-setup-side-window-bottom))
+  (which-key-mode))
 
 (use-package winum
   :ensure t
@@ -386,7 +377,6 @@
 
 (use-package yasnippet
   :ensure t
-  :commands (yas-global-mode)
   :defer t
   ;; :config
   ;; (yas-global-mode 1)
@@ -396,7 +386,7 @@
   :no-require t
   :defer t
   :bind (:map c-mode-base-map ([ret] . newline-and-indent))
-  :init
+  :config
   (setq-default c-default-style "linux")
   (setq-default c-basic-offset 4
                 tab-width 4
@@ -416,7 +406,7 @@
 
 (use-package css-mode
   :no-require t
-  :init
+  :config
   (setq css-indent-offset 2))
 
 (use-package dired
