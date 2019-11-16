@@ -438,6 +438,10 @@
   :diminish "ⓦ"
   :defer t)
 
+(use-package hl-line-mode
+  :no-require t
+  :hook (emacs-startup . global-hl-line-mode))
+
 (use-package recentf
   :no-require t
   :custom
