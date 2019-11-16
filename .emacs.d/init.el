@@ -66,16 +66,12 @@
 (use-package company
   :diminish "Ⓐ"
   :ensure t
-  :hook ((js2-mode go-mode) . company-mode)
-  :init
-  (require 'company)
-  ;; (add-to-list 'company-backends 'company-irony)
+  :hook ((js2-mode go-mode css-mode scss-mode) . company-mode)
+  :config
+  (setq-default company-dabbrev-downcase nil)
+  (setq-default company-tooltip-limit 20)                      ; bigger popup window
+  (setq-default company-idle-delay .3)                         ; decrease delay before autocompletion popup shows
   ;; (add-to-list 'company-backends 'company-c-headers)
-  (setq company-dabbrev-downcase nil)
-  (setq company-tooltip-limit 20)                      ; bigger popup window
-  (setq company-idle-delay .3)                         ; decrease delay before autocompletion popup shows
-  (setq company-echo-delay 0)                          ; remove annoying blinking
-  (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
   )
 
 (use-package company-c-headers
