@@ -58,6 +58,11 @@
   :ensure t
   :hook (js2-mode))
 
+(use-package ace-jump-mode
+  :ensure t
+  :defer t
+  :bind ("C-c SPC" . ace-jump-mode))
+
 (use-package company
   :diminish "Ⓐ"
   :ensure t
