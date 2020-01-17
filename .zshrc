@@ -45,14 +45,19 @@ esac
 function md () { mkdir -p "$@" && cd "$@"; }
 
 function req_add() {
-    pip install $1;
+    pip install $1
     local str=$(pip freeze | grep "$1")
     echo $str >> requirements.txt
 }
 
+function jest_target() {
+    local file=$1
+    set NODE_ICU_DATA=node_modules/full-icu& ./node_modules/.bin/react-scripts test --env=jsdom "$1" --coverage --collectCoverageFrom="$(dirname $1)/!(index|*story.).js" --watch
+}
+
 alias grepr='grep --color -nR'
 
-fpath=( "$HOME/dotfiles/zsh/zfunctions" $fpath )
+fpath=( "$HOME/Git/dotfiles/zsh/zfunctions" $fpath )
 zstyle ':completion:*:*:git:*' script $HOME/dotfiles/zsh/zfunctions/git-completion.zsh
 autoload -Uz compinit
 compinit
@@ -60,4 +65,7 @@ autoload -U promptinit; promptinit
 prompt pure
 autoload -U select-word-style
 select-word-style bash
-source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+source $HOME/Git/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+

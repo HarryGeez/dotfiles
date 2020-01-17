@@ -65,3 +65,4 @@ node_modules/*
 # sass
 .sass-cache
 
+.log/

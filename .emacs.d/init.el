@@ -92,6 +92,7 @@
 
 (use-package company-lsp
   :defer t
+  :ensure t
   :commands company-lsp
   ;; :config
   ;; (setq company-lsp-cache-candidates nil)
@@ -221,6 +222,7 @@
 
 (use-package lsp-mode
   :diminish "Ⓛ"
+  :ensure t
   :commands (lsp lsp-deferred)
   :custom
   (lsp-prefer-flymake :none)
@@ -264,8 +266,9 @@
   :diminish "Ⓟ"
   :ensure t
   :defer t
-  :hook
-  ((js2-mode js-mode css-mode scss-mode graphql-mode web-mode) . prettier-js-mode))
+  ;; :hook
+  ;; ((js2-mode js-mode css-mode scss-mode graphql-mode web-mode) . prettier-js-mode)
+)
 
 (use-package protobuf-mode
   :ensure t
@@ -489,7 +492,7 @@
 
 (if (window-system)
     (progn
-      (add-to-list 'default-frame-alist '(font . "SF Mono 13"))
+      (add-to-list 'default-frame-alist '(font . "SF Mono 12"))
       ;; This is bound to f11 in Emacs 24.4
       ;; (toggle-frame-fullscreen)
       ;; Who use the bar to scroll?
@@ -509,3 +512,19 @@
 
 (provide 'init)
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(lsp-prefer-flymake :none)
+ '(package-selected-packages
+   (quote
+    (lsp-mode company-lsp yaml-mode xref-js2 winum which-key web-mode spaceline snazzy-theme smartparens rjsx-mode rainbow-mode rainbow-delimiters pug-mode protobuf-mode prettier-js phi-search markdown-mode magit js2-refactor js2-mode iedit helm golden-ratio flycheck expand-region emmet-mode delight company-tern company-irony company-go company-c-headers company add-node-modules-path exec-path-from-shell use-package)))
+ '(recentf-max-saved-items 300 t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
